@@ -1,5 +1,5 @@
 class House
-    attr_accessor :name, :mascot, :head_of_house, :ghost, :founder
+    attr_accessor :name, :colors, :mascot, :values, :head_of_house, :ghost, :founder
 
     @@all = []
 
