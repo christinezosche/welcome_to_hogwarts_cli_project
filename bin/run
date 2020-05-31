@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require_relative '../lib/hogwarts_cli_environment.rb'
+
+#CLI.new.run
