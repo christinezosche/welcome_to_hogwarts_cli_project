@@ -7,7 +7,15 @@ class API
         uri = URI.parse(BASE_URL + KEY)
         response = Net::HTTP.get_response(uri)
         data = JSON.parse(response.body)
-        data
+        data.each do |house|
+            name = house["name"]
+            mascot = house["mascot"]
+            head_of_house = house["headOfHouse"]
+            ghost = house["houseGhost"]
+            founder = house["founder"]
+            House.new(name, mascot, head_of_house, ghost, founder)
+        end
     end
 end
+
 
