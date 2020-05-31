@@ -9,11 +9,13 @@ class API
         data = JSON.parse(response.body)
         data.each do |house|
             name = house["name"]
+            colors = house["colors"]
             mascot = house["mascot"]
+            values = house["values"]
             head_of_house = house["headOfHouse"]
             ghost = house["houseGhost"]
             founder = house["founder"]
-            House.new(name, mascot, head_of_house, ghost, founder)
+            House.new(name, colors, mascot, values, head_of_house, ghost, founder)
         end
     end
 end
