@@ -28,30 +28,30 @@ class CLI
     end
 
     def sort
-        sorted_house = House.all.sample
+        @@sorted_house = House.all.sample
         print "You're in" 
         sleep 1 
         3.times do 
             print "." 
             sleep 1 
         end
-        print "#{sorted_house.name}!" "\n"
+        print "#{@@sorted_house.name}!" "\n"
         sleep 2
-        more_house_info(sorted_house)
+        more_house_info
     end
 
-    def more_house_info(sorted_house)
+    def more_house_info
         puts "Would you like more information on your house? Enter 'Yes' or 'No'."
         input = gets.chomp
         if input == 'Yes'
-            get_house_info(sorted_house)
-            another_house_info(sorted_house)
+            get_house_info(@@sorted_house)
+            another_house_info
         elsif input == 'No'
-            another_house_info(sorted_house)
+            another_house_info
         else
             sleep 1
             error
-            more_house_info(sorted_house)
+            more_house_info
         end
     end
 
@@ -71,22 +71,22 @@ class CLI
         sleep 2
     end
 
-    def another_house_info(sorted_house)
+    def another_house_info
         puts "Would you like information on another house? Enter 'Yes' or 'No'."
         input = gets.chomp
         if input == 'Yes'
-            get_another_house_input(sorted_house)
+            get_another_house_input
         elsif input == 'No'
             sleep 1
-            normal_exit(sorted_house)
+            normal_exit
         else
             sleep 1
             error
-            another_house_info(sorted_house)
+            another_house_info
         end
     end
 
-    def get_another_house_input(sorted_house)
+    def get_another_house_input
         puts "Please choose a house: Gryffindor, Hufflepuff, Ravenclaw, or Slytherin."
         input = gets.chomp
         if input == "Gryffindor" || input == "Hufflepuff" || input == "Ravenclaw" || input == "Slytherin"
@@ -95,9 +95,9 @@ class CLI
         else
             sleep 1
             error
-            get_another_house_info(sorted_house)
+            get_another_house_input
         end
-        another_house_info(sorted_house)
+        another_house_info
     end
     
     def early_exit
@@ -105,8 +105,8 @@ class CLI
         exit
     end
 
-    def normal_exit(sorted_house)
-        puts "Have a great term, #{sorted_house.name}!"
+    def normal_exit
+        puts "Have a great term, #{@@sorted_house.name}!"
         exit
     end
 
