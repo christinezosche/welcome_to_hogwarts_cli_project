@@ -45,6 +45,7 @@ class CLI
         input = gets.chomp
         if input == 'Yes'
             get_house_info(sorted_house)
+            another_house_info(sorted_house)
         elsif input == 'No'
             another_house_info(sorted_house)
         else
@@ -54,28 +55,27 @@ class CLI
         end
     end
 
-    def get_house_info(sorted_house)
+    def get_house_info(house)
         sleep 1
-        puts "Founder: #{sorted_house.founder}"
+        puts "Founder: #{house.founder}"
         sleep 1
-        puts "Colors: #{sorted_house.colors}"
+        puts "Colors: #{house.colors}"
         sleep 1
-        puts "Mascot: #{sorted_house.mascot}"
+        puts "Mascot: #{house.mascot}"
         sleep 1
-        puts "House Ghost: #{sorted_house.ghost}"
+        puts "House Ghost: #{house.ghost}"
         sleep 1
-        puts "Head of House: #{sorted_house.head_of_house}"
+        puts "Head of House: #{house.head_of_house}"
         sleep 1
-        puts "Values: #{sorted_house.values}"
+        puts "Values: #{house.values}"
         sleep 2
-        another_house_info(sorted_house)
     end
 
     def another_house_info(sorted_house)
         puts "Would you like information on another house? Enter 'Yes' or 'No'."
         input = gets.chomp
         if input == 'Yes'
-            get_another_house_info(sorted_house)
+            get_another_house_input(sorted_house)
         elsif input == 'No'
             sleep 1
             normal_exit(sorted_house)
@@ -86,24 +86,12 @@ class CLI
         end
     end
 
-    def get_another_house_info(sorted_house)
+    def get_another_house_input(sorted_house)
         puts "Please choose a house: Gryffindor, Hufflepuff, Ravenclaw, or Slytherin."
         input = gets.chomp
         if input == "Gryffindor" || input == "Hufflepuff" || input == "Ravenclaw" || input == "Slytherin"
-            h = House.all.find{|house| house.name == input}
-            sleep 1
-            puts "Founder: #{h.founder}"
-            sleep 1
-            puts "Colors: #{h.colors}"
-            sleep 1
-            puts "Mascot: #{h.mascot}"
-            sleep 1
-            puts "House Ghost: #{h.ghost}"
-            sleep 1
-            puts "Head of House: #{h.head_of_house}"
-            sleep 1
-            puts "Values: #{h.values}"
-            sleep 2
+            house = House.all.find{|house| house.name == input}
+            get_house_info(house)
         else
             sleep 1
             error
