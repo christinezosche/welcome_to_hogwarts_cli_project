@@ -44,9 +44,10 @@ class CLI
         puts "Would you like more information on your house? Enter 'Yes' or 'No'."
         input = gets.chomp
         if input == 'Yes'
-            get_house_info(@@sorted_house)
+            print_house_info(@@sorted_house)
             another_house_info
         elsif input == 'No'
+            sleep 1
             another_house_info
         else
             sleep 1
@@ -55,7 +56,7 @@ class CLI
         end
     end
 
-    def get_house_info(house)
+    def print_house_info(house)
         sleep 1
         puts "Founder: #{house.founder}"
         sleep 1
@@ -91,7 +92,7 @@ class CLI
         input = gets.chomp
         if input == "Gryffindor" || input == "Hufflepuff" || input == "Ravenclaw" || input == "Slytherin"
             house = House.all.find{|house| house.name == input}
-            get_house_info(house)
+            print_house_info(house)
         else
             sleep 1
             error
