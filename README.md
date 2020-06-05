@@ -14,7 +14,7 @@ After cloning the repo, run bundle install to install required gems and dependen
 ## Usage
 To run the app, you will need to acquire a unique API key. To do so, visit the [Potter API](https://https://.potterapi.com/) and click "Get a Key" in the upper-right corner. Once you create a free account, you can access your key in the "Your Account" section of the site.
 
-Then, in the cloned repo, create a .env file that includes your unique API key, in the following format: API_KEY='*your key here*'
+Then, in the cloned repo, create a .env file in the main directory. In the file, type the following: API_KEY='*copy and paste your API key here*'
 
 Enter bin/run to run the application.
 
