@@ -1,4 +1,5 @@
 class House
+
     attr_accessor :name, :colors, :mascot, :values, :head_of_house, :ghost, :founder
 
     @@all = []
@@ -21,7 +22,7 @@ class House
     def save
         @@all << self
     end
-
+    
 end
 
 

@@ -1,5 +1,6 @@
 require 'bundler/setup'
 Bundler.require(:default)
+
 require 'open-uri'
 require 'net/http'
 require 'dotenv/load'

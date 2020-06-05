@@ -18,6 +18,7 @@ class API
             House.new(name, colors, mascot, values, head_of_house, ghost, founder)
         end
     end
+    
 end
 
 
