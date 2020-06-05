@@ -9,17 +9,16 @@ This Ruby gem sorts the user, a first-year student at Hogwarts, into their new h
 The gemfile and other information for this gem can be found at https://rubygems.org/gems/welcome_to_hogwarts_cli
 
 ## Development
-After forking and cloning the repo, run bundle install to install required gems and dependencies. Enter bin/console to experiment with the code using Pry.
+After cloning the repo, run bundle install to install required gems and dependencies. Enter bin/console to experiment with the code using Pry.
 
 ## Usage
+To run the app, you will need to acquire a unique API key. To do so, visit the [Potter API](https://https://.potterapi.com/) and click "Get a Key" in the upper-right corner. Once you create a free account, you can access your key in the "Your Account" section of the site.
+
+Then, in the cloned repo, create a .env file that includes your unique API key, in the following format: API_KEY='*your key here*'
 
 Enter bin/run to run the application.
 
 ## Contributing
-To contribute, you will need to acquire a unique API key. To do so, visit the [Potter API](https://https://.potterapi.com/) and click "Get a Key" in the upper-right corner. Once you create a free account, you can access your key in the "Your Account" section of the site.
-
-Then, in the cloned repo, update the .env file with your unique API key.
-
 Bug reports and pull requests are welcome on [GitHub](https://github.com/christinezosche/welcome_to_hogwarts_cli_project). 
     
 This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the Contributor Covenant code of conduct.
