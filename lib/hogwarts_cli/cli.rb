@@ -28,14 +28,14 @@ class CLI
     end
 
     def sort
-        @@sorted_house = House.all.sample
+        @sorted_house = House.all.sample
         print "You're in" 
         sleep 1 
         3.times do 
             print "." 
             sleep 1 
         end
-        print "#{@@sorted_house.name}!" "\n"
+        print "#{@sorted_house.name}!" "\n"
         sleep 2
         more_house_info
     end
@@ -44,7 +44,7 @@ class CLI
         puts "Would you like more information on your house? Enter 'Yes' or 'No'."
         input = gets.chomp
         if input == 'Yes'
-            print_house_info(@@sorted_house)
+            print_house_info(@sorted_house)
             another_house_info
         elsif input == 'No'
             sleep 1
@@ -107,7 +107,7 @@ class CLI
     end
 
     def normal_exit
-        puts "Have a great term, #{@@sorted_house.name}!"
+        puts "Have a great term, #{@sorted_house.name}!"
         exit
     end
 
